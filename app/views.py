@@ -1,5 +1,4 @@
 import os
-import cv2
 from flask import render_template
 
 UPLOAD_FOLDER = 'static/upload'
