@@ -55,7 +55,6 @@ PyYAML
 regex
 requests
 responses
-sacremosesk
 scikit-learn
 scipy==1.9.3
 sip
