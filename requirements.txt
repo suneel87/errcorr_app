@@ -37,7 +37,7 @@ multiprocess
 munkres==1.1.4
 networkx
 numpy
-opencv-python==4.7.0
+opencv-python
 packaging
 pandas
 Pillow
