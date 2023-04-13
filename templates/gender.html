@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br><br>
+            <h3 class="display-8" >Gender Classification</h3>
+            <p>Upload an image (.jpg, .jpeg, .png), our model will 
+                detect face first and then predict gender based on face (Male or Female)
+            </p>
+
+            <form action="#" method="POST" enctype="application/x-www-form-urlencoded">
+            <label for="input-text">Input:</label>
+            <textarea type="text" id="input-text" name="input-text" oninput="updateOutput()"></textarea>
+            <br>
+            <label for="output-text">Output:</label>
+            <textarea type="text" id="output-text" name="output-text" readonly></textarea>
+            <script>
+              function updateOutput() {
+                var input = document.getElementById("input-text").value;
+                $.ajax({
+                type: "POST",
+                url: "/process_input",
+                data: {"input": input},
+                dataType: "text",
+                success: function(response) {
+                    document.getElementById("output-text").value = response;
+                }
+                });
+              }
+            </script>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
